@@ -1,0 +1,9 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "my-portfolio"
+compatibility_date = "2026-06-09"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "portfolio-db"
+database_id = "59bb23e3-c297-4ba7-9667-fc00fe61941f"
