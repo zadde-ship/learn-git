@@ -401,34 +401,45 @@
                     </div>
 
                     <!-- Contact Form -->
-                    <div class="contact-form-container glass-panel">
-                        <form id="contact-form" novalidate>
-                            <div class="form-group">
-                                <input type="text" id="name-input" class="form-control" placeholder=" " required>
-                                <label for="name-input" class="form-label" data-th="ชื่อของคุณ" data-en="Your Name">ชื่อของคุณ</label>
-                                <span class="error-message" id="name-error" data-th="กรุณากรอกชื่อของคุณ" data-en="Please enter your name">กรุณากรอกชื่อของคุณ</span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <input type="email" id="email-input" class="form-control" placeholder=" " required>
-                                <label for="email-input" class="form-label" data-th="อีเมลติดต่อ" data-en="Contact Email">อีเมลติดต่อ</label>
-                                <span class="error-message" id="email-error" data-th="กรุณากรอกอีเมลที่ถูกต้อง" data-en="Please enter a valid email">กรุณากรอกอีเมลที่ถูกต้อง</span>
-                            </div>
+<div class="contact-form-container glass-panel">
+    <!-- 1. เพิ่ม action และ method ที่บรรทัดนี้ -->
+    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        
+        <!-- ========================================== -->
+        <!-- 2. วาง Access Key ตรงนี้ (บรรทัดแรกใต้ form) -->
+        <input type="hidden" name="access_key" value="82511b1f-3c32-47f9-9794-76a408933e88">
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+        <!-- ========================================== -->
 
-                            <div class="form-group">
-                                <textarea id="message-input" class="form-control" placeholder=" " rows="5" required></textarea>
-                                <label for="message-input" class="form-label" data-th="ข้อความรายละเอียดงาน" data-en="Project Details">ข้อความรายละเอียดงาน</label>
-                                <span class="error-message" id="message-error" data-th="กรุณาพิมพ์รายละเอียดข้อความของคุณ" data-en="Please enter your message details">กรุณาพิมพ์รายละเอียดข้อความของคุณ</span>
-                            </div>
+        <div class="form-group">
+            <!-- 3. เพิ่ม name="ชื่อลูกค้า" เข้าไปใน input -->
+            <input type="text" name="ชื่อลูกค้า" id="name-input" class="form-control" placeholder=" " required>
+            <label for="name-input" class="form-label" data-th="ชื่อของคุณ" data-en="Your Name">ชื่อของคุณ</label>
+            <span class="error-message" id="name-error" data-th="กรุณากรอกชื่อของคุณ" data-en="Please enter your name">กรุณากรอกชื่อของคุณ</span>
+        </div>
 
-                            <!-- Form Status Message -->
-                            <div class="form-status" id="form-status"></div>
+        <div class="form-group">
+            <!-- 3. เพิ่ม name="อีเมล" เข้าไปใน input -->
+            <input type="email" name="อีเมล" id="email-input" class="form-control" placeholder=" " required>
+            <label for="email-input" class="form-label" data-th="อีเมลติดต่อ" data-en="Contact Email">อีเมลติดต่อ</label>
+            <span class="error-message" id="email-error" data-th="กรุณากรอกอีเมลที่ถูกต้อง" data-en="Please enter a valid email">กรุณากรอกอีเมลที่ถูกต้อง</span>
+        </div>
 
-                            <button type="submit" class="btn btn-primary btn-block" id="form-submit">
-                                <span data-th="ส่งข้อความหาผม" data-en="Send Message">ส่งข้อความหาผม</span> <i data-lucide="send"></i>
-                            </button>
-                        </form>
-                    </div>
+        <div class="form-group">
+            <!-- 3. เพิ่ม name="ข้อความ" เข้าไปใน textarea -->
+            <textarea name="ข้อความ" id="message-input" class="form-control" placeholder=" " rows="5" required></textarea>
+            <label for="message-input" class="form-label" data-th="ข้อความรายละเอียดงาน" data-en="Project Details">ข้อความรายละเอียดงาน</label>
+            <span class="error-message" id="message-error" data-th="กรุณาพิมพ์รายละเอียดข้อความของคุณ" data-en="Please enter your message details">กรุณาพิมพ์รายละเอียดข้อความของคุณ</span>
+        </div>
+
+        <!-- Form Status Message -->
+        <div class="form-status" id="form-status"></div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="form-submit">
+            <span data-th="ส่งข้อความหาผม" data-en="Send Message">ส่งข้อความหาผม</span> <i data-lucide="send"></i>
+        </button>
+    </form>
+</div>
                 </div>
             </div>
         </section>
